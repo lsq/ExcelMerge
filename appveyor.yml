@@ -10,11 +10,13 @@ configuration:
   - Release
 
 build:
-  project: ExcelMerge.sln
   verbosity: minimal
   
 before_build:
-  - nuget restore
+  - ps: nuget restore
+  
+after_build:
+- ps: dir .
 
 artifacts:
 - path: ExcelMerge\bin\release\
