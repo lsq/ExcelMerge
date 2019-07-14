@@ -13,12 +13,12 @@ build:
   verbosity: minimal
   
 before_build:
-  - ps: nuget restore
+  #- ps: nuget restore
   
 after_build:
-- ps: dir .
+  - ps: dir .
 
 artifacts:
-- path: ExcelMerge\bin\release\
-  name: test
+  - path: ExcelMerge\bin\release\
+    name: test
 
